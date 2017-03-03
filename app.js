@@ -307,11 +307,11 @@ function receivedMessage(event) {
         sendAccountLinking(senderID);
         break;
 
-      case 'whoami'
+      case 'whoami':
         sendTextMessage(senderID, 'Shikhar Shrivastava');
         break;
 
-       case 'tell me a joke'
+       case 'tell me a joke':
         sendTextMessage(senderID, 'Once upon a time...');
         break; 
 
