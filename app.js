@@ -308,11 +308,11 @@ function receivedMessage(event) {
         break;
 
       case 'whoami'
-        sendTextMessage(senderID, "Shikhar Shrivastava");
+        sendTextMessage(senderID, 'Shikhar Shrivastava');
         break;
 
        case 'tell me a joke'
-        sendTextMessage(senderID, "Once upon a time...");
+        sendTextMessage(senderID, 'Once upon a time...');
         break; 
 
       default:
