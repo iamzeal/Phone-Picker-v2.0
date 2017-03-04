@@ -98,7 +98,7 @@ const findOrCreateSession = (fbid) => {
 
 // Our bot actions
 const actions = {
-  const sessionId;
+  var sessionId = {};
   send({sessionId}, {text}) {
     // Our bot has something to say!
     // Let's retrieve the Facebook user whose session belongs to
