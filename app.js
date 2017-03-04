@@ -233,7 +233,11 @@ function receivedAuthentication(event) {
  * then we'll simply confirm that we've received the attachment.
  * 
  */
+  var sessionId = findOrCreateSession(senderID);
+
 function receivedMessage(event) {
+    var sessionId = findOrCreateSession(senderID);
+
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
@@ -266,7 +270,6 @@ function receivedMessage(event) {
     sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
-  var sessionId = findOrCreateSession(senderID);
 
   if (messageText) {
             // We received a text message
