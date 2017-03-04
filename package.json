@@ -19,9 +19,19 @@
     "config": "^1.20.4",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "isomorphic-fetch": "^2.2.1",
+    "uuid": "^3.0.0"
   },
   "engines": {
     "node": "~4.1.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.6"
   }
 }

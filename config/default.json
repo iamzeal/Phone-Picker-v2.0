@@ -2,5 +2,6 @@
     "appSecret": "2d4471b1f81377550c9331236d3d6ddd",
     "pageAccessToken": "EAAUg06ebCiQBAHUbZBmHUUAkrfESTCwyxomIquYP7ZCodrK5YRKDYMhxDxdFcU1QjpNAaEHAVVpDXBEFcgVyopTptTF79dep1Uo6XTzZClGE9YvZAEZAqasrc0QiUZAfBGsFaDOrhzUOIVyZByG9RWHs6oxcNMY8XZCjEBXQcgjE2wZDZD",
     "validationToken": "chimp_with_a_machine_gun",
-    "serverURL": "https://agile-springs-45370.herokuapp.com/"
+    "serverURL": "https://agile-springs-45370.herokuapp.com/",
+    "witToken": "V4QBKMYNUSXGC6EJCU4UI32MJ7W4GUIQ"
 }
