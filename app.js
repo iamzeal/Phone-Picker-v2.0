@@ -268,7 +268,7 @@ function receivedMessage(event) {
   }
 
   if (messageText) {
-
+            var sessionId = findOrCreateSession(senderID);
             // We received a text message
 
             // Let's forward the message to the Wit.ai Bot Engine
