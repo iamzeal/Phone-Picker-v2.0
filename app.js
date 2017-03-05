@@ -159,7 +159,6 @@ app.get('/webhook', function(req, res) {
  *
  */
 app.post('/webhook', function (req, res) {
-  /*
   var data = req.body;
 
   // Make sure this is a page subscription
@@ -172,12 +171,6 @@ app.post('/webhook', function (req, res) {
 
       // Iterate over each messaging event
       pageEntry.messaging.forEach(function(messagingEvent) {
-        var senderID = messagingEvent.sender.id;
-        var recipientID = messagingEvent.recipient.id;
-        var timeOfMessage = messagingEvent.timestamp;
-        var message = messagingEvent.message;
-        const sessionId = findOrCreateSession(senderID);
-        
         if (messagingEvent.optin) {
           receivedAuthentication(messagingEvent);
         } else if (messagingEvent.message) {
@@ -201,7 +194,7 @@ app.post('/webhook', function (req, res) {
     // You must send back a 200, within 20 seconds, to let us know you've 
     // successfully received the callback. Otherwise, the request will time out.
     res.sendStatus(200);
-  }*/
+  }
 });
 
 /*
