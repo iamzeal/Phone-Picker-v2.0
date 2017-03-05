@@ -99,7 +99,7 @@ const findOrCreateSession = (fbid) => {
 // Our bot actions
 const actions = {
 
-  send(1234, {text}) {
+  send({sessionId}, {text}) {
     // Our bot has something to say!
     // Let's retrieve the Facebook user whose session belongs to
     const recipientId = sessions[sessionId].fbid;
@@ -171,6 +171,12 @@ app.post('/webhook', function (req, res) {
 
       // Iterate over each messaging event
       pageEntry.messaging.forEach(function(messagingEvent) {
+        var senderID = messagingEvent.sender.id;
+        var recipientID = messagingEvent.recipient.id;
+        var timeOfMessage = messagingEvent.timestamp;
+        var message = messagingEvent.message;
+        const sessionId = findOrCreateSession(senderID);
+        
         if (messagingEvent.optin) {
           receivedAuthentication(messagingEvent);
         } else if (messagingEvent.message) {
