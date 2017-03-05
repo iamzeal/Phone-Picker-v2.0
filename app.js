@@ -105,6 +105,7 @@ const firstEntityValue = (entities, entity) => {
   if (!val) {
     return null;
   }
+  console.log('entities retuned', typeof val === 'object' ? val.value : val);
   return typeof val === 'object' ? val.value : val;
 };
 
