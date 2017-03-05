@@ -150,7 +150,7 @@ const actions = {
   },
   getTime({context, entities}) {
   return new Promise(function(resolve, reject) {
-    var location = firstEntityValue(entities, "location")
+    var location = firstEntityValue(entities, "time")
     if (location) {
       context.forecast = getTime() + location; // we should call a weather API here
       delete context.missingLocation;
