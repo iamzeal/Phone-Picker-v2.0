@@ -28,12 +28,13 @@ try {
   Wit = require('node-wit').Wit;
   log = require('node-wit').log;
 }
+
 try {
   // if running from repo
-  var fonoapi = require('../fonoapi.node.js');
+var fonoapi = require('fonoapi-index.js');
 
 } catch (e) {
-  var fonoapi = require('fonoapi.nodejs');
+var fonoapi = require('./fonoapi-index.js');
 }
 
 fonoapi.token = '4939b2e9071d182e2b5884539768d6067588dc77cdb3c24e';
@@ -150,6 +151,18 @@ const actions = {
   return new Promise(function(resolve, reject) {
     console.log('executed with', context, entities);
       context.setPhones = "the phones requested are"; 
+      // get devices w/ brand
+fonoapi.getDevices(myCallback, 'iphone', 'apple');
+// get devices w/o brand
+fonoapi.getDevices(myCallback, 'iphone 6S');
+
+// get latest devices from apple (limit result to 5)
+fonoapi.getLatest(myCallback, 5, 'apple');
+
+function myCallback(queryString, data) {
+    console.log(data.Brand + " " + data.DeviceName);
+    
+}
     return resolve(context);
     });
   }
