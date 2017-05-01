@@ -16,7 +16,7 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
-  var fonoapi = require('./fonoapi.node.js');
+  var fonoapi = require('fonoapi.node.js');
   request = require('request');
 
 let Wit = null;
