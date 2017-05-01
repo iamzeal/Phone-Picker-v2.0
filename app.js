@@ -33,7 +33,7 @@ try {
   var fonoapi = require('../fonoapi.node.js');
 
 } catch (e) {
-  var fonoapi = require('fonoapi.node.js');
+  var fonoapi = require('fonoapi.nodejs');
 }
 
 fonoapi.token = '4939b2e9071d182e2b5884539768d6067588dc77cdb3c24e';
