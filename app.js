@@ -16,7 +16,6 @@ const
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),  
-  var fonoapi = require('fonoapi.node.js');
   request = require('request');
 
 let Wit = null;
@@ -29,6 +28,7 @@ try {
   Wit = require('node-wit').Wit;
   log = require('node-wit').log;
 }
+  var fonoapi = require('fonoapi.node.js');
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
