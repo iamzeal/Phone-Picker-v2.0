@@ -28,14 +28,12 @@ try {
   Wit = require('node-wit').Wit;
   log = require('node-wit').log;
 }
-  var fonoapi = require('fonoapi.node.js');
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
-fonoapi.token = 'eca99984186f3022db68ea3b8289b874968e5d5756a3b7fa';
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -142,17 +140,6 @@ const actions = {
   return new Promise(function(resolve, reject) {
     console.log('executed with', context, entities);
       context.setPhones = "the phones requested are"; 
-      // get devices w/ brand
-fonoapi.getDevices(myCallback, 'iphone', 'apple');
-// get devices w/o brand
-fonoapi.getDevices(myCallback, 'iphone 6S');
-
-// get latest devices from apple (limit result to 5)
-fonoapi.getLatest(myCallback, 5, 'apple');
-
-function myCallback(queryString, data) {
-    console.log(data.Brand + " " + data.DeviceName);
-}
     return resolve(context);
     });
   }
