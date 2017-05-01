@@ -46,6 +46,14 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
+      // get devices w/ brand
+fonoapi.getDevices(myCallback, 'iphone', 'apple');
+
+function myCallback(queryString, data) {
+    console.log(data);
+    
+}
+
 /*
  * Be sure to setup your config values before running this code. You can 
  * set them using environment variables or modifying the config file in /config.
@@ -151,18 +159,7 @@ const actions = {
   return new Promise(function(resolve, reject) {
     console.log('executed with', context, entities);
       context.setPhones = "the phones requested are"; 
-      // get devices w/ brand
-fonoapi.getDevices(myCallback, 'iphone', 'apple');
-// get devices w/o brand
-fonoapi.getDevices(myCallback, 'iphone 6S');
 
-// get latest devices from apple (limit result to 5)
-fonoapi.getLatest(myCallback, 5, 'apple');
-
-function myCallback(queryString, data) {
-    console.log(data.Brand + " " + data.DeviceName);
-    
-}
     return resolve(context);
     });
   }
