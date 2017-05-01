@@ -36,12 +36,19 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
 
-      // get devices w/ brand
+
+/*
+
+***Below call is just for Demo***
+function to test the fonoAPI. This tries to query the db with 
+all phones names iPhones from Apple. We'll probably call this from getPhones method
+
+*/
+// get devices w/ brand
 fonoapi.getDevices(myCallback, 'iphone', 'apple');
 
 function myCallback(queryString, data) {
-    console.log(data);
-    
+    console.log(data);   
 }
 
 /*
@@ -145,15 +152,21 @@ const actions = {
       return Promise.resolve()
     }
   },
+  /*
+   * This is custom wit action to be executed when the action-required is found as 'want'
+   * i.e. user want a phone. 
+   * A possible 'text' to execute the below can be ' I want pones with good battery and camera'  
+   */
+  
   getPhones({context, entities}) {
   return new Promise(function(resolve, reject) {
     console.log('executed with', context, entities);
-      context.setPhones = "the phones requested are"; 
-
+      context.setPhones = "You will see some phones here!"; 
     return resolve(context);
     });
   }
-  // You should implement your custom actions here
+  // We implement our custom actions here...getPhones method is called by wit. This basically does nothing as of now
+  // Let's change the above comment in coming times. 
   // See https://wit.ai/docs/quickstart
 };
 
@@ -165,7 +178,7 @@ const wit = new Wit({
 });
 
 /*
- * Use your own validation token. Check that the token used in the Webhook 
+ * Check that the token used in the Webhook 
  * setup is the same token used here.
  *
  */
