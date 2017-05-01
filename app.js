@@ -28,6 +28,16 @@ try {
   Wit = require('node-wit').Wit;
   log = require('node-wit').log;
 }
+try {
+  // if running from repo
+  var fonoapi = require('../fonoapi.node.js');
+
+} catch (e) {
+  var fonoapi = require('fonoapi.node.js');
+}
+
+fonoapi.token = '4939b2e9071d182e2b5884539768d6067588dc77cdb3c24e';
+
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
