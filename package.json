@@ -15,14 +15,16 @@
   "author": "Facebook",
   "license": "ISC",
   "dependencies": {
-    "node-wit": "*",
     "body-parser": "^1.15.0",
     "config": "^1.20.4",
     "ejs": "^2.4.2",
     "express": "^4.13.4",
-    "request": "^2.72.0",
+    "fonoapi-nodejs": "^0.1.1",
     "isomorphic-fetch": "^2.2.1",
-    "uuid": "^3.0.0"
+    "node-wit": "*",
+    "request": "^2.72.0",
+    "uuid": "^3.0.0",
+    "fonoapi-nodejs" : "*"
   },
   "engines": {
     "node": "6.9.4"
