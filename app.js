@@ -136,28 +136,13 @@ const actions = {
       return Promise.resolve()
     }
   },
-  getForecast({context, entities}) {
+  getPhones({context, entities}) {
   return new Promise(function(resolve, reject) {
-    var location = firstEntityValue(entities, "location")
-    if (location) {
-      context.forecast = 'sunny in ' + location; // we should call a weather API here
-      delete context.missingLocation;
-    } else {
-      context.missingLocation = true;
-      delete context.forecast;
-    }
+    console.log('executed with', context, entities);
+      context.setPhones = "the phones requested are"; 
     return resolve(context);
     });
-  },
-  getTime({context, entities}) {
-  return new Promise(function(resolve, reject) {
-    var location = firstEntityValue(entities, "time")
-    if (location) {
-      context.time = getTime() + location; // we should call a weather API here
-    } 
-    return resolve(context);
-    });
-  },
+  }
   // You should implement your custom actions here
   // See https://wit.ai/docs/quickstart
 };
