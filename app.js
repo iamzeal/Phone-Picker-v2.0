@@ -132,7 +132,7 @@ const actions = {
    * A possible 'text' to execute the below can be ' I want pones with good battery and camera'  
    */
   
-  getPhones({context, entities}, {sessionId}) {
+  getPhones({context, entities, sessionId}) {
   return new Promise(function(resolve, reject) {
     console.log('executed with context as', context,'entities as', entities);   
 	      const recipientId = sessions[sessionId].fbid;
