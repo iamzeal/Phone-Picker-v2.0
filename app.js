@@ -138,7 +138,7 @@ const actions = {
 	      const recipientId = sessions[sessionId].fbid;
 
      // context.setPhones = "hi"; 
-	  sendTextMessage(recipientId, "heyyy");
+	  sendGenericMessage(recipientId);
     return resolve(context);
     });
   }
