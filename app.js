@@ -19,37 +19,11 @@ try {
   log = require('node-wit').log;
 }
 
-try {
-  // if running from repo
-var fonoapi = require('fonoapi-index.js');
-
-} catch (e) {
-var fonoapi = require('./fonoapi-index.js');
-}
-
-fonoapi.token = '4939b2e9071d182e2b5884539768d6067588dc77cdb3c24e';
-
-
 var app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
 app.use(bodyParser.json({ verify: verifyRequestSignature }));
 app.use(express.static('public'));
-
-
-/*
-
-***Below call is just for Demo***
-function to test the fonoAPI. This tries to query the db with 
-all phones names iPhones from Apple. We'll probably call this from getPhones method
-
-*/
-// get devices w/ brand
-fonoapi.getDevices(myCallback, 'iphone', 'apple');
-
-function myCallback(queryString, data) {
-    console.log(data);   
-}
 
 /*
  * Be sure to setup your config values before running this code. You can 
@@ -160,39 +134,9 @@ const actions = {
   
   getPhones({context, entities}) {
   return new Promise(function(resolve, reject) {
-    console.log('executed with', context, entities);
-    let messageData = {
-	    "attachment": {
-		    "type": "template",
-		    "payload": {
-				"template_type": "generic",
-			    "elements": [{
-					"title": "First card",
-				    "subtitle": "Element #1 of an hscroll",
-				    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
-				    "buttons": [{
-					    "type": "web_url",
-					    "url": "https://www.messenger.com",
-					    "title": "web url"
-				    }, {
-					    "type": "postback",
-					    "title": "Postback",
-					    "payload": "Payload for first element in a generic bubble",
-				    }],
-			    }, {
-				    "title": "Second card",
-				    "subtitle": "Element #2 of an hscroll",
-				    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
-				    "buttons": [{
-					    "type": "postback",
-					    "title": "Postback",
-					    "payload": "Payload for second element in a generic bubble",
-				    }],
-			    }]
-		    }
-	    }
-    };
-      context.setPhones = messageData; 
+    console.log('executed with', context, entities);   
+     // context.setPhones = "hi"; 
+	  sendTextMessage(recipientId, "heyyy");
     return resolve(context);
     });
   }
