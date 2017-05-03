@@ -134,7 +134,9 @@ const actions = {
   
   getPhones({context, entities}) {
   return new Promise(function(resolve, reject) {
-    console.log('executed with', context, entities);   
+    console.log('executed with context as', context,'entities as', entities);   
+	      const recipientId = sessions[sessionId].fbid;
+
      // context.setPhones = "hi"; 
 	  sendTextMessage(recipientId, "heyyy");
     return resolve(context);
