@@ -647,31 +647,31 @@ function sendGenericMessage(recipientId) {
         payload: {
           template_type: "generic",
           elements: [{
-            title: "rift",
-            subtitle: "Next-generation virtual reality",
+            title: "Salaxy S8",
+            subtitle: "Infinity Display",
             item_url: "https://www.oculus.com/en-us/rift/",               
             image_url: SERVER_URL + "/assets/rift.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/rift/",
-              title: "Open Web URL"
+              title: "Flipkart"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Samsung",
               payload: "Payload for first bubble",
             }],
           }, {
-            title: "touch",
-            subtitle: "Your Hands, Now in VR",
+            title: "Google Pixel",
+            subtitle: "Best Camera Phone",
             item_url: "https://www.oculus.com/en-us/touch/",               
             image_url: SERVER_URL + "/assets/touch.png",
             buttons: [{
               type: "web_url",
               url: "https://www.oculus.com/en-us/touch/",
-              title: "Open Web URL"
+              title: "Flipkart"
             }, {
               type: "postback",
-              title: "Call Postback",
+              title: "Google",
               payload: "Payload for second bubble",
             }]
           }]
