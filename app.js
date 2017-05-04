@@ -133,12 +133,17 @@ const actions = {
    */
   
   getPhones({context, entities, sessionId}) {
+  var budget = firstEntityValue(entities, 'budget');
   return new Promise(function(resolve, reject) {
+	  if(budget){
     console.log('executed with context as', context,'entities as', entities);   
-	      const recipientId = sessions[sessionId].fbid;
-
-     // context.setPhones = "hi"; 
-	  sendGenericMessage(recipientId);
+	  const recipientId = sessions[sessionId].fbid;
+	  delete context.missingbudget;
+	  sendGenericMessage(recipientId);		  
+	  }
+	  else {
+	  context.missingBudget = true;
+	  }
     return resolve(context);
     });
   }
