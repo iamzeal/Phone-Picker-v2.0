@@ -133,10 +133,13 @@ const actions = {
    */
   
   getPhones({context, entities, sessionId}) {
+ console.log('executed with context as', context,'entities as', entities);   
+ console.log('and budget', firstEntityValue(entities, 'budget'));
   var budget = firstEntityValue(entities, 'budget');
+  console.log('executed with context as', context,'entities as', entities);   
   return new Promise(function(resolve, reject) {
-	  if(budget){
-    console.log('executed with context as', context,'entities as', entities);   
+	  if(budget) {
+  	  console.log('executed with context as', context,'entities as', entities);   
 	  const recipientId = sessions[sessionId].fbid;
 	  delete context.missingbudget;
 	  sendGenericMessage(recipientId);		  
@@ -144,7 +147,7 @@ const actions = {
 	  else {
 	  context.missingBudget = true;
 	  }
-    return resolve(context);
+   	 return resolve(context);
     });
   }
   // We implement our custom actions here...getPhones method is called by wit. This basically does nothing as of now
